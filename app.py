@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import pickle
 
-# Model eka load karaganna (Meka repository ekata upload karala thiyenna ona)
 try:
     model = pickle.load(open('churn_model.pkl', 'rb'))
 except FileNotFoundError:
@@ -30,7 +29,6 @@ with st.form("prediction_form"):
     submit = st.form_submit_button("Predict Churn")
 
 if submit:
-    # Input data transform karaganna (Obage notebook eke thiyena encoding walata anuwa)
     # Gender: Male=1, Female=0 | Senior: Yes=1, No=0
     input_df = pd.DataFrame([{
         'gender': 1 if gender == "Male" else 0,
